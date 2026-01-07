@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="%23667eea"/><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+    z-index: -1;
+}
+
+.form {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    animation: slideUp 0.5s ease-out;
+}
+
+.form:first-of-type {
+    border-radius: 12px 12px 0 0;
+}
+
+.form:last-of-type {
+    border-radius: 0 0 12px 12px;
+    border-top: 1px solid #e0e0e0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.area {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.area:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.switch-field {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.switch-field input {
+    display: none;
+}
+
+.switch-field label {
+    padding: 10px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+    text-align: center;
+    flex: 1;
+    min-width: 60px;
+}
+
+.switch-field input:checked + label {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.switch-field label:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.location {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 25px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.location:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.location option {
+    padding: 10px;
+}
+
+.submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.submit:active {
+    transform: translateY(0);
+}
+
+.result {
+    background: #f8f9fa;
+    border-left: 4px solid #667eea;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result h2 {
+    color: #667eea;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .form {
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .switch-field {
+        gap: 8px;
+    }
+
+    .switch-field label {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 50px;
+    }
+
+    .submit {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .result h2 {
+        font-size: 20px;
+    }
+}
