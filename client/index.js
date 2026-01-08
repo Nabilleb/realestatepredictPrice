@@ -29,8 +29,20 @@ function onPageLoad() {
     submit.click(function onClickedEstimatePrice() {
       var bhk = getBHKValue();
       var bath = getBathValue();
-      console.log("BHK: " + bhk);
-      console.log("Bath: " + bath);
+      var sqft = $('#uiSqft').val();
+      var location = $('#uiLocations').val();
+      
+      var url = 'http://127.0.0.1:5000/predict_home_price';
+      $.post(url,{
+        total_sqft: parseFloat(sqft),
+        bhk: parseInt(bhk),
+        bath: parseInt(bath),
+        location: location
+      },function(data, status) {
+        console.log(data.estimated_price);
+        $('#uiEstimatedPrice').html("<h2>" + data.estimated_price.toString() + " Lakh</h2>");
+        console.log(status);  
+      });
     });
 }
 
